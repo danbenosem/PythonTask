@@ -7,7 +7,7 @@ import pytest
 
 from pybank import (validate_email, calculate_balance,
                     is_strong_password, apply_interest,
-                    get_transaction_summary)
+                    )
 
 
 def test_valid_email():
@@ -133,10 +133,3 @@ def test_apply_interest_zero_balance():
     assert apply_interest(0, 0.1, 1) == 0.0
 
 
-def test_transaction_summary():
-    transactions = [["credit", 2000], ["debit", 500], ["credit", 300]]
-    result = get_transaction_summary(transactions)
-    assert result[0] == ["total_credits", 2300]
-    assert result[1] == ["total_debits", 500]
-    assert result[2] == ["net_balance", 1800]
-    assert result[3] == ["transaction_count", 3]

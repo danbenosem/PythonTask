@@ -60,13 +60,7 @@ while True:
         result = apply_interest(calculate_balance(transactions), rate, years)
         print(f"After interest: {result}")
 
-    elif choice == "5":
-        summary = get_transaction_summary(summary_transactions)
-        print(f"Total Credits: {summary[0][1]}")
-        print(f"Total Debits: {summary[1][1]}")
-        print(f"Net Balance: {summary[2][1]}")
-        print(f"Transaction Count: {summary[3][1]}")
-
+   
     elif choice == "6":
         print("Goodbye!")
         break
